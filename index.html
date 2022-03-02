@@ -6,26 +6,78 @@
     <title>Rock, Paper, Scissors!</title>
   </head>
   <body>
-    <section class="main-section">
-      <header class="header">
-        <h1>Rock, Paper, Scissors</h1>
-      </header>
-        <section class="container">
-          <aside class="player-1-container">
-            <h2>Player 1</h2>
-            <h3>HUMAN</h3>
-            <h4 class="player-1-win-count" id="player1WinCount">Wins: 0</h4>
-          </aside>
-          <article class="game-board">
-            <h2 class="choose-your-game">Choose Your Game...</h2>
-          </article>
-          <aside class="player-2-container">
-            <h2>Player 2</h2>
-            <h3>COMPUTER</h3>
-            <h4 class="player-2-win-count" id="player2WinCount">Wins: 0</h4>
-          </aside>
+    <main>
+      <aside class="left-player-1-container">
+        <h2>Player 1</h2>
+        <h3>HUMAN</h3>
+        <h4 class="player-1-win-count" id="player1WinCount">Wins: 0</h4>
+        <div class="change-game hidden" id="changeGame">
+          <button class="change-game-button" id="changeGameButton">CHANGE GAME?</button>
+        </div>
+      </aside>
+      <section class="game-board-section">
+        <section class="title-container">
+          <h1 class="title">ROCK, PAPER, SCISSORS</h1>
+          <div class="change-text-box">
+            <p class="change-text" id="changeText">Choose your game!</p>
+          </div>
         </section>
-    </section>
+        <form class="game-board">
+          <div class="choose-game-buttons" id="chooseGameButtons">
+            <button class="classic-game" id="classicGame">
+              <p class="game-title" id="classicGameTitle">CLASSIC</p>
+              <p class="players-list" id="classicPlayersList">Rock > Scissors<br>Paper > Rock<br>Scissors > Paper<p>
+            </button>
+            <button class="hard-game" id="hardGame">
+              <p class="game-title" id="hardGameTitle">HARD</p>
+              <p class="players-list" id="hardPlayersList">Rock > Scissors & Lizard<br>Paper > Rock & Alien<br>Scissors > Paper & Lizard<br>Lizard > Alien & Paper<br>Alien > Scissors & Rock<p>
+            </button>
+          </div>
+          <div class="choose-weapon-classic-view hidden" id="chooseWeaponClassicView">
+            <button class="weapon-button">
+              <img src="./Assets/happy-rocks.png" alt="Rock" class="image" id="rock">
+              <p class="emoji hidden" id="classicRockChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/lines-paper.png" alt="Paper" class="image" id="paper">
+              <p class="emoji hidden" id="classicPaperChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/lines-scissors.png" alt="Scissors" class="image" id="scissors">
+              <p class="emoji hidden" id="classicScissorsChoice">HUMAN</p>
+            </button>
+          </div>
+          <div class="choose-weapon-hard-view hidden" id="chooseWeaponHardView">
+            <button class="weapon-button">
+              <img src="./Assets/happy-rocks.png" alt="Rock" class="image" id="rock">
+              <p class="emoji hidden" id="hardRockChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/lines-paper.png" alt="Paper" class="image" id="paper">
+              <p class="emoji hidden" id="hardPaperChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/lines-scissors.png" alt="Scissors" class="image" id="scissors">
+              <p class="emoji hidden" id="hardScissorsChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/flat-lizard.png" alt="Lizard" class="image" id="lizard">
+              <p class="emoji hidden" id="hardLizardChoice">HUMAN</p>
+            </button>
+            <button class="weapon-button">
+              <img src="./Assets/flat-alien.png" alt="Alien" class="image" id="alien">
+              <p class="emoji hidden" id="hardAlienChoice">HUMAN</p>
+            </button>
+          </div>
+        </form>
+      </section>
+            <!-- 4 sections - initial, classic, hard, winner or draw - hidden -->
+      <aside class="right-player-2-container">
+        <h2>Player 2</h2>
+        <h3>COMPUTER</h3>
+        <h4 class="player-2-win-count" id="player2WinCount">Wins: 0</h4>
+      </aside>
+    </main>
   </body>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="player.js"></script>

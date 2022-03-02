@@ -2,14 +2,11 @@
 
 class Game {
   constructor() {
-    this.player1 = new player;
-    this.player2 = new Player;
-    this.player1Score = 0;
-    this.player2Score = 0;
-    this.player1Wins = [];
-    this.player2Wins = [];
+    this.player1 = human; // new Player
+    this.player2 = computer; // new Player
     this.draw = false;
-    this.winner = false;
+    this.winner = "" // human or computer... then reset...
+    // this.gameType = ???; classic vs hard...  Helps determine win conditions... How/where do we switch? In main.js!
   }
 };
 
@@ -18,11 +15,18 @@ class Game {
 
 // whichPlayerWon()?
 
-// winConditions()?
+// winConditions(player1, player2)?
+  // conditional? if player1.choice === "rock" && player2.choice === "scissors"
+  // etc, etc... for player 1 wins, then else if for player 2 wins?
+  //
 
-// checkForDraw()?
+// checkForDraw(player1, player2)?
+// conditional? if p1 === p2 draw = true? .choice...
+// else draw = false?
 
 // resetGame()?
+// hmm...
+
 
 // A Game should include:
 // Two Player instances - Human & Computer? GV in main.js

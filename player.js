@@ -5,13 +5,20 @@
 // takeTurn
 
 class Player {
-  constructor(name, token, wins) {
+  constructor(name, token) {
     this.name = name;
-    this.token = token;
-    this.wins = wins;
+    this.token = token; // emoji...
+    this.wins = 0;
+    this.choice = ""; // buttons...
+    // extension - reset wins...
   }
 };
 
 takeTurn() {
-
+// call it in main.js
+// conditional - if player name === human, get their click input, (event.target)
+// if this.name === computer, (getRamdomIndex)
+  // 2 arrays - 1 for classic, 1 for hard, (for computer)
 }
+
+// resetWins()...

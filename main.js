@@ -9,6 +9,7 @@ var hardViewButton = document.querySelector('.hard-game');
 var changeGameButton = document.querySelector('.change-game-button');
 // Views:
 var chooseGameButtons = document.querySelector('.choose-game-buttons');
+var changeText = document.querySelector('.change-text');
 var classicView = document.querySelector('.choose-weapon-classic-view');
 var hardView = document.querySelector('.choose-weapon-hard-view');
 var changeGameView = document.querySelector('.change-game');
@@ -25,7 +26,7 @@ changeGameButton.addEventListener('click', displayStartPage);
 // playGame - takeTurn?
 
 // GLOBAL VARIABLES
-var currentGame = new Game(); //declared, can be re-assigned
+var currentGame; // = new Game(); //declared, can be re-assigned
 
 // FUNCTIONS/EVENT HANDLERS
 function getRandomIndex(array) {
@@ -43,13 +44,18 @@ function hide(element) {
 
 // 1. Initiate Game!
 
-function initiateGame() {
+function initiateGame(event) {
   event.preventDefault()
+  human = new Player("human")
+  computer = new Player("computer")
+  currentGame = new Game(human, computer)
 //console.log(initiateGame)
-   if (currentGame.gameType === "classic") {
+   if (event.target.className === 'classic-game' || event.target.className === 'classic-title' || event.target.className === 'classic-list') {
+     currentGame.gameType === "classic"
      displayClassicView()
    }
-   else if (currentGame.gameType === "hard") {
+   else if (event.target.className === 'hard-game' || event.target.className === 'hard-title' || event.target.className === 'hard-list') {
+     currentGame.gameType === "hard"
      displayHardView()
   }
   };
@@ -59,6 +65,7 @@ function displayClassicView() {
   hide(hardView)
   show(changeGameView)
   hide(chooseGameButtons)
+  changeText.innerText = "Choose Weapon!";
   //hide(startPage)
 };
 
@@ -67,15 +74,19 @@ function displayHardView() {
   hide(classicView)
   show(changeGameView)
   hide(chooseGameButtons)
+  changeText.innerText = "Choose Weapon!";
   //hide(startPage)
 };
 
 function displayStartPage() {
 show(chooseGameButtons)
 hide(changeGameView)
+hide(classicView)
+hide(hardView)
+changeText.innerText = "Choose your game!";
 };
 
-// Start Game Function? 4 things... Instantiate current game = new game, in game class passing to args human & Computer
+// Start Game Function? 4 things... Instantiate current game = new game, in game class passing two args human & Computer
 // which button was clicked..? classic or hard.
 // if classic clicked, call classic game function
 // if hard clicked, call hard game function
@@ -88,13 +99,16 @@ hide(changeGameView)
 // function for hard game?
   // add & remove hidden class
 
-// 2. Play Game!
+// 2. Play Game...
+
+// function playGame() {
+//}
   // Players take turn
-  // Check for win & check for draw at the same time...
-  // Call display Winner
-  // Reset Game
+  // Check for win & check for draw at the same time..?
+  // Call display Winner..?
+  // Reset Game..?
 
-// 3. Display Winner!
+// 3. Display Winner...
 
-// function for reset game
+// function for reset game?
 // hide and show functionality

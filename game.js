@@ -5,8 +5,8 @@ class Game {
     this.player1 = human; // new Player
     this.player2 = computer; // new Player
     this.draw = false;
-    this.winner = "" // human or computer... then reset...
-    this.gameType = "classic" || "hard"; // classic vs hard...  Helps determine win conditions... How/where do we switch? In main.js!
+    this.winner = ""; // human or computer... then reset...
+    this.gameType = ""; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
   }
 };
 
@@ -16,7 +16,27 @@ class Game {
 // whichPlayerWon()?
 
 // winConditions(player1, player2)?
-  // conditional? if player1.choice === "rock" && player2.choice === "scissors"
+  // conditional?
+
+  // if - player1.choice === "rock" && player2.choice === "scissors" || player2.choice === "lizard"
+    // player1.choice === "paper" && player2.choice === "rock" || player2.choice === "alien"
+    // player1.choice === "scissors" && player2.choice === "paper" || player2.choice === "lizard"
+    // player1.choice === "lizard" && player2.choice === "alien" || player2.choice === "paper"
+    // player1.choice === "alien" && player2.choice === "scissors" || player2.choice === "rock"
+    // this.winner = "human"
+// Player 1 Wins!
+    // add to win count += 1
+
+  // if - player1.choice === "rock" && player2.choice === "paper" || player2.choice === "alien"
+    // player1.choice === "paper" && player2.choice === "scissors" || player2.choice === "lizard"
+    // player1.choice === "scissors" && player2.choice === "rock" || player2.choice === "alien"
+    // player1.choice === "lizard" && player2.choice === "scissors" || player2.choice === "rock"
+    // player1.choice === "alien" && player2.choice === "paper" || player2.choice === "lizard"
+    // this.winner = "computer"
+// Player 2 Wins!
+    // add to win count += 1
+
+
   // etc, etc... for player 1 wins, then else if for player 2 wins?
   //
 

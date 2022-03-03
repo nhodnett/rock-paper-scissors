@@ -14,11 +14,11 @@ class Player {
   }
 };
 
-takeTurn() {
+//takeTurn() {
 // call it in main.js
 // conditional - if player name === human, get their click input, (event.target)
 // if this.name === computer, (getRamdomIndex)
   // 2 arrays - 1 for classic, 1 for hard, (for computer)
-}
+//}
 
 // resetWins()...

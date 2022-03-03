@@ -5,13 +5,13 @@
   margin: 0;
 }
 
-* {
+/* * {
   border: 2px solid blue
-}
+} */
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 html {
   height: 100%;
@@ -20,6 +20,8 @@ html {
 
 body {
   background-color: #F0EDEE;
+  font-family: 'Nunito', sans-serif;
+  /* color: #2A2E45; */
   /* height: 100%; */
 }
 
@@ -40,7 +42,7 @@ main {
 
 .left-player-1-container, .right-player-2-container {
   background-color: #2A2E45;
-  color: #FFF;
+  color: #F0EDEE;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,16 +50,93 @@ main {
   width: 25%;
 }
 
+h2, h3, h4 {
+  padding: 25px;
+}
+
+.change-game-button {
+  background-color: #F0EDEE;
+  color: #2A2E45
+  border: 0;
+  padding: 10px;
+  margin-top: 250px;
+}
+
 .game-board-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* color: #2A2E45; */
   height: 100vh;
   width: 50%;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+.change-text {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%
 }
 
 .choose-game-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.classic-game, .hard-game {
+  background-color: #2A2E45;
+  color: #F0EDEE;
+  border: 0;
+  margin-top: 50px;
+  padding: 25px 25px 25px 25px;
+}
+
+.game-title {
+  font-size: 25px;
+}
+
+.players-list {
+  font-size: 15px;
+}
+
+.choose-weapon-classic-view,
+.choose-weapon-hard-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weapon-button {
+  height: 75px;
+  width: 75px;
+  border: 0;
+  padding: 0;
+  margin: 25px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }

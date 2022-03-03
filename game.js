@@ -1,12 +1,12 @@
 // A game.js file that contains a Game class.
 
 class Game {
-  constructor() {
+  constructor(human, computer) {
     this.player1 = human; // new Player
     this.player2 = computer; // new Player
     this.draw = false;
     this.winner = "" // human or computer... then reset...
-    // this.gameType = ???; classic vs hard...  Helps determine win conditions... How/where do we switch? In main.js!
+    this.gameType = "classic" || "hard"; // classic vs hard...  Helps determine win conditions... How/where do we switch? In main.js!
   }
 };
 
@@ -20,7 +20,15 @@ class Game {
   // etc, etc... for player 1 wins, then else if for player 2 wins?
   //
 
-// checkForDraw(player1, player2)?
+// checkDraw(player1, player2) {
+//   if (player1.choice === player2.choice) {
+//     this.draw = true;
+//     this.winner = "";
+//   }
+//   else {
+//     this.draw = false;
+//   }
+// };
 // conditional? if p1 === p2 draw = true? .choice...
 // else draw = false?
 

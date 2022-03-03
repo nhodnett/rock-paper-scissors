@@ -1,29 +1,82 @@
 // A main.js file that contains all DOM related JavaScript
-
 // Remember that the game logic exists exclusively in the data model.
 // The DOM simply reflects/displays that data model.
 
-// Query Selectors
+// QUERY SELECTORS
+// Buttons:
+var classicViewButton = document.querySelector('.classic-game');
+var hardViewButton = document.querySelector('.hard-game');
+var changeGameButton = document.querySelector('.change-game-button');
+// Views:
+var chooseGameButtons = document.querySelector('.choose-game-buttons');
+var classicView = document.querySelector('.choose-weapon-classic-view');
+var hardView = document.querySelector('.choose-weapon-hard-view');
+var changeGameView = document.querySelector('.change-game');
+//var startPage = document.querySelector('.game-board');
+// Weapon button
 
 
-// Event Listeners
 
+// EVENT LISTENERS
+// initiateGame - when classic or hard is chosen
+// classicViewButton.addEventListener('click', initiateGame);
+chooseGameButtons.addEventListener('click', initiateGame);
+changeGameButton.addEventListener('click', displayStartPage);
+// playGame - takeTurn?
 
-// Global Variables
-var currentGame; //declared, can be re-assigned
+// GLOBAL VARIABLES
+var currentGame = new Game(); //declared, can be re-assigned
 
-
-// Functions
+// FUNCTIONS/EVENT HANDLERS
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-// Helper functions to show/hide...
+// HELPER FUNCTIONS - SHOW/HIDE...
+function show(element) {
+  element.classList.remove('hidden');
+};
+
+function hide(element) {
+  element.classList.add('hidden');
+};
 
 // 1. Initiate Game!
 
+function initiateGame() {
+  event.preventDefault()
+//console.log(initiateGame)
+   if (currentGame.gameType === "classic") {
+     displayClassicView()
+   }
+   else if (currentGame.gameType === "hard") {
+     displayHardView()
+  }
+  };
+
+function displayClassicView() {
+  show(classicView)
+  hide(hardView)
+  show(changeGameView)
+  hide(chooseGameButtons)
+  //hide(startPage)
+};
+
+function displayHardView() {
+  show(hardView)
+  hide(classicView)
+  show(changeGameView)
+  hide(chooseGameButtons)
+  //hide(startPage)
+};
+
+function displayStartPage() {
+show(chooseGameButtons)
+hide(changeGameView)
+};
+
 // Start Game Function? 4 things... Instantiate current game = new game, in game class passing to args human & Computer
-// which button was clicked..? clasic or hard.
+// which button was clicked..? classic or hard.
 // if classic clicked, call classic game function
 // if hard clicked, call hard game function
   // Is this where to switch between classic and hard game?

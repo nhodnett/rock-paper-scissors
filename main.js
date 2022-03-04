@@ -23,7 +23,7 @@ var changeGameView = document.querySelector('.change-game');
 // classicViewButton.addEventListener('click', initiateGame);
 chooseGameButtons.addEventListener('click', initiateGame);
 changeGameButton.addEventListener('click', displayStartPage);
-
+classicView.addEventListener('click', playGame);
 hardView.addEventListener('click', playGame);
 // playGame - takeTurn?
 
@@ -114,18 +114,24 @@ function chooseComputerWeapon() {
   else if (currentGame.gameType === "hard") {
       return hardWeapons[getRandomIndex(hardWeapons)];
   }
-}
+};
 
 function playGame(event) {
   event.preventDefault()
   console.log(event.target.id)
-  if (event.target.id === chooseWeaponHardView) {
+  if (event.target.id === chooseWeaponClassicView) {
     return
   }
-  //var humanChoice = event.target.closest(id)
+  else if (event.target.id === chooseWeaponHardView) {
+    return
+  }
+  //var humanChoice = event.target.closest(id)???
   var computerChoice = chooseComputerWeapon()
   console.log('hi', computerChoice)
-}
+
+  currentGame.checkWinConditions(human, computer)
+  console.log('hi again', currentGame)
+};
   // Players take turn
   // Check for win & check for draw at the same time..?
   // Call display Winner..?
@@ -133,5 +139,4 @@ function playGame(event) {
 
 // 3. Display Winner...
 
-// function for reset game?
-// hide and show functionality
+// 4. function for resetGame()?

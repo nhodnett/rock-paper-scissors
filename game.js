@@ -7,33 +7,33 @@ class Game {
     this.draw = false;
     this.winner = ""; // human or computer... then reset...
     this.gameType = "";
-    // this.winConditions = {
-    //   rock: ["scissors", "lizard"],
-    //   paper: ["rock", "alien"],
-    //   scissors: ["paper", "lizard"],
-    //   lizard: ["alien", "paper"],
-    //   alien: ["scissor", "rock"],
-    // }; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
+    this.winConditions = {
+      rock: ["scissors", "lizard"],
+      paper: ["rock", "alien"],
+      scissors: ["paper", "lizard"],
+      lizard: ["alien", "paper"],
+      alien: ["scissor", "rock"],
+    }; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
   }
-};
 
 // Do I need turns? i.e. player1Turn = true, player2Turn = false???
 // If so, do I need nextPlayer() method?
 
 // whichPlayerWon()?
-// checkWinConditions(human, computer) {
-//   if (this.winConditions[human].includes([computer])) {
-//     this.winner = this.player1
-//     this.player1.wins ++
-//    }
-//   else if (this.winConditions[computer].includes([human])) {
-//     this.winner = this.player2
-//     this.player2.wins ++
-//   }
-//   else {
-//     this.draw = true;
-//   }
-// };
+checkWinConditions(human, computer) {
+  if (this.winConditions[human].includes([computer])) {
+    this.winner = this.player1
+    this.player1.wins ++
+   }
+  else if (this.winConditions[computer].includes([human])) {
+    this.winner = this.player2
+    this.player2.wins ++
+  }
+  else {
+    this.draw = true;
+  }
+}
+};
 
 // winConditions(player1, player2)?
   // conditional?

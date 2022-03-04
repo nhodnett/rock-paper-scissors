@@ -23,6 +23,8 @@ var changeGameView = document.querySelector('.change-game');
 // classicViewButton.addEventListener('click', initiateGame);
 chooseGameButtons.addEventListener('click', initiateGame);
 changeGameButton.addEventListener('click', displayStartPage);
+
+hardView.addEventListener('click', playGame);
 // playGame - takeTurn?
 
 // GLOBAL VARIABLES
@@ -51,11 +53,11 @@ function initiateGame(event) {
   currentGame = new Game(human, computer)
 //console.log(initiateGame)
    if (event.target.className === 'classic-game' || event.target.className === 'classic-title' || event.target.className === 'classic-list') {
-     currentGame.gameType === "classic"
+     currentGame.gameType = "classic"
      displayClassicView()
    }
    else if (event.target.className === 'hard-game' || event.target.className === 'hard-title' || event.target.className === 'hard-list') {
-     currentGame.gameType === "hard"
+     currentGame.gameType = "hard"
      displayHardView()
   }
   };
@@ -101,8 +103,29 @@ changeText.innerText = "Choose your game!";
 
 // 2. Play Game...
 
-// function playGame() {
-//}
+function chooseComputerWeapon() {
+  console.log(currentGame.gameType)
+  var classicWeapons = ["rock", "paper", "scissors"]
+  var hardWeapons = ["rock", "paper", "scissors", "lizard", "alien"]
+
+  if (currentGame.gameType === "classic") {
+      return classicWeapons[getRandomIndex(classicWeapons)];
+  }
+  else if (currentGame.gameType === "hard") {
+      return hardWeapons[getRandomIndex(hardWeapons)];
+  }
+}
+
+function playGame(event) {
+  event.preventDefault()
+  console.log(event.target.id)
+  if (event.target.id === chooseWeaponHardView) {
+    return
+  }
+  //var humanChoice = event.target.closest(id)
+  var computerChoice = chooseComputerWeapon()
+  console.log('hi', computerChoice)
+}
   // Players take turn
   // Check for win & check for draw at the same time..?
   // Call display Winner..?

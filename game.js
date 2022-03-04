@@ -6,7 +6,14 @@ class Game {
     this.player2 = computer; // new Player
     this.draw = false;
     this.winner = ""; // human or computer... then reset...
-    this.gameType = ""; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
+    this.gameType = "";
+    // this.winConditions = {
+    //   rock: ["scissors", "lizard"],
+    //   paper: ["rock", "alien"],
+    //   scissors: ["paper", "lizard"],
+    //   lizard: ["alien", "paper"],
+    //   alien: ["scissor", "rock"],
+    // }; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
   }
 };
 
@@ -14,16 +21,30 @@ class Game {
 // If so, do I need nextPlayer() method?
 
 // whichPlayerWon()?
+// checkWinConditions(human, computer) {
+//   if (this.winConditions[human].includes([computer])) {
+//     this.winner = this.player1
+//     this.player1.wins ++
+//    }
+//   else if (this.winConditions[computer].includes([human])) {
+//     this.winner = this.player2
+//     this.player2.wins ++
+//   }
+//   else {
+//     this.draw = true;
+//   }
+// };
 
 // winConditions(player1, player2)?
   // conditional?
-
-  // if - player1.choice === "rock" && player2.choice === "scissors" || player2.choice === "lizard"
-    // player1.choice === "paper" && player2.choice === "rock" || player2.choice === "alien"
-    // player1.choice === "scissors" && player2.choice === "paper" || player2.choice === "lizard"
-    // player1.choice === "lizard" && player2.choice === "alien" || player2.choice === "paper"
-    // player1.choice === "alien" && player2.choice === "scissors" || player2.choice === "rock"
-    // this.winner = "human"
+  // if ((player1.choice === "rock" && player2.choice === "scissors") || (player1.choice === "rock" && player2.choice === "lizard")) {
+  //   this.winner = "human"
+  // }
+  //   (player1.choice === "paper" && player2.choice === "rock" || player2.choice === "alien")
+  //   (player1.choice === "scissors" && player2.choice === "paper" || player2.choice === "lizard"
+  //   player1.choice === "lizard" && player2.choice === "alien" || player2.choice === "paper"
+  //   player1.choice === "alien" && player2.choice === "scissors" || player2.choice === "rock")
+  //   this.winner = "human"
 // Player 1 Wins!
     // add to win count += 1
 

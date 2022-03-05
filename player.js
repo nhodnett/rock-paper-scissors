@@ -9,10 +9,12 @@ class Player {
     this.name = name;
     this.token = token; // emoji...
     this.wins = 0;
-    this.choice = ""; // buttons...
+    this.choice = ""; // buttons... Am I doing anything with this?
     // extension - reset wins...
   }
 };
+
+//What is the Token for?
 
 //takeTurn() {
 // call it in main.js

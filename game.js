@@ -32,6 +32,7 @@ checkWinConditions(human, computer) {
   else {
     this.draw = true;
   }
+  return `This`
 }
 };
 

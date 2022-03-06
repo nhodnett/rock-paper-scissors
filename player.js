@@ -9,7 +9,7 @@ class Player {
     this.name = name;
     this.token = token; // emoji...
     this.wins = 0;
-    this.choice = ""; // buttons... Am I doing anything with this?
+    // this.choice = ""; // buttons... Am I doing anything with this?
     // extension - reset wins...
   }
 };

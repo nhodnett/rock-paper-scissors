@@ -12,7 +12,7 @@ class Game {
       paper: ["rock", "alien"],
       scissors: ["paper", "lizard"],
       lizard: ["alien", "paper"],
-      alien: ["scissor", "rock"],
+      alien: ["scissors", "rock"],
     }; // "classic" || "hard";  // Helps determine win conditions... How/where do we switch? In main.js!
   }
 
@@ -21,18 +21,21 @@ class Game {
 
 // whichPlayerWon()?
 checkWinConditions(human, computer) {
-  if (this.winConditions[human].includes([computer])) {
-    this.winner = this.player1
-    this.player1.wins ++
+  this.winner = null;
+  if (this.winConditions[human].includes(computer)) {
+    this.winner = this.player1.name
+    this.player1.wins += 1
+    console.log('player1', this.player1.wins)
    }
-  else if (this.winConditions[computer].includes([human])) {
-    this.winner = this.player2
-    this.player2.wins ++
+  else if (this.winConditions[computer].includes(human)) {
+    this.winner = this.player2.name
+    this.player2.wins += 1
+    console.log('player2', this.player2.wins)
   }
-  else {
-    this.draw = true;
-  }
-  return `This`
+  // else {
+  //   this.draw = true;
+  //   console.log('draw', this.draw)
+  // }
 }
 };
 

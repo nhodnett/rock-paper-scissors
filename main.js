@@ -22,7 +22,8 @@ var computerWinsDisplay = document.querySelector('.player-2-win-count');
 // Do I need Weapon buttons? Emojis/pngs?
 
 // EVENT LISTENERS
-chooseGameButtons.addEventListener('click', initiateGame);
+window.addEventListener('load', initiateGame);
+chooseGameButtons.addEventListener('click', newGame);
 changeGameButton.addEventListener('click', displayStartPage);
 classicView.addEventListener('click', playGame);
 hardView.addEventListener('click', playGame);
@@ -46,21 +47,34 @@ function hide(element) {
 };
 
 // 1. Initiate Game!
-function initiateGame(event) {
-  event.preventDefault()
+function initiateGame() {
+  // event.preventDefault()
   human = new Player("human")
   computer = new Player("computer")
   currentGame = new Game(human, computer)
 
-   if (event.target.className === 'classic-game' || event.target.className === 'classic-title' || event.target.className === 'classic-list') {
-     currentGame.gameType = 'classic'
-     displayClassicView()
-   }
-   else if (event.target.className === 'hard-game' || event.target.className === 'hard-title' || event.target.className === 'hard-list') {
-     currentGame.gameType = 'hard'
-     displayHardView()
+  //  if (event.target.className === 'classic-game' || event.target.className === 'classic-title' || event.target.className === 'classic-list') {
+  //    currentGame.gameType = 'classic'
+  //    displayClassicView()
+  //  }
+  //  else if (event.target.className === 'hard-game' || event.target.className === 'hard-title' || event.target.className === 'hard-list') {
+  //    currentGame.gameType = 'hard'
+  //    displayHardView()
+  // }
+  };
+
+function newGame(event) {
+  event.preventDefault()
+  if (event.target.className === 'classic-game' || event.target.className === 'classic-title' || event.target.className === 'classic-list') {
+    currentGame.gameType = 'classic'
+    displayClassicView()
+  }
+  else if (event.target.className === 'hard-game' || event.target.className === 'hard-title' || event.target.className === 'hard-list') {
+    currentGame.gameType = 'hard'
+    displayHardView()
   }
   };
+
 
 function displayClassicView() {
   show(classicView)
@@ -80,14 +94,17 @@ function displayHardView() {
   //hide(startPage)
 };
 
-function displayStartPage() {
+function displayStartPage(event) {
+  event.preventDefault()
 show(chooseGameButtons)
 hide(changeGameView)
 hide(classicView)
 hide(hardView)
+hide(resultsView) //wont need...
 changeText.innerText = "Choose your game!";
 };
 
+//
 function displayResultsView() {
 show(resultsView)
 hide(classicView)
@@ -111,28 +128,24 @@ function chooseComputerWeapon() {
 // 3. Play game Function...
 function playGame(event) {
   event.preventDefault()
-  console.log('human choice', event.target.id)
-  if (event.target.id === chooseWeaponClassicView) {
-  //  checkWinConditions(human, computer)
-    console.log(checkWinConditions(human, computer))
-    return
-  }
-  else if (event.target.id === chooseWeaponHardView) {
-  //  checkWinConditions(human, computer)
-    return
-  }
+
   var humanChoice = event.target.id
   var computerChoice = chooseComputerWeapon()
-  console.log('random computer choice', computerChoice)
 
   currentGame.checkWinConditions(humanChoice, computerChoice)
-    console.log('who won?', currentGame)
+  //  console.log('who won?', currentGame)
   //  console.log('who won?', currentGame.checkWinConditions)
+
+   // displayResultsView()
+   displayHumanChoice(humanChoice)
+   displayComputerChoice(computerChoice)
+   displayWinner()
+   displayScore()
 };
 
 // 4. Display human choice and computer choice side by side when image is clicked...
 function displayHumanChoice(humanChoice) {
-  humanChoiceImage.innerHTML += "";
+  humanChoiceImage.innerHTML = "";
   //playGame()
     displayResultsView();
   if (humanChoice === "rock") {
@@ -153,7 +166,7 @@ function displayHumanChoice(humanChoice) {
 };
 
 function displayComputerChoice(computerChoice) {
-  computerChoiceImage.innerHTML += "";
+  computerChoiceImage.innerHTML = "";
   //playGame()
     displayResultsView();
   if (computerChoice === "rock") {
@@ -173,22 +186,23 @@ function displayComputerChoice(computerChoice) {
 }
 };
 
-// 5. Display Winner - innerText...
-// function displayWinner() {
-//   if(currentGame.winner === "human") {
-//     changeText.innerText = "Player 1 Wins!"
-//   }
-//   else if (currentGame.winner === "computer") {
-//     changeText.innerText = "Player 2 Wins!"
-//   }
-//   else {
-//     changeText.innerText = "It's a Draw!"
-// }
-// };
+//5. Display Winner - innerText...
+function displayWinner() {
+  if(currentGame.winner === "human") {
+    changeText.innerText = "Player 1 Wins!"
+  }
+  else if (currentGame.winner === "computer") {
+    changeText.innerText = "Player 2 Wins!"
+  }
+  else {
+    changeText.innerText = "It's a Draw!"
+}
+};
 
-// 6. function displayScore() {
-//
-// }
+function displayScore() {
+humanWinsDisplay.innerText = `Wins: ${currentGame.player1.wins}`
+computerWinsDisplay.innerText = `Wins: ${currentGame.player2.wins}`
+}
 
 // 7. Show Game Results
 // function showResults() {

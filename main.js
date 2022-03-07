@@ -13,13 +13,16 @@ var changeText = document.querySelector('.change-text');
 var classicView = document.querySelector('.choose-weapon-classic-view');
 var hardView = document.querySelector('.choose-weapon-hard-view');
 var changeGameView = document.querySelector('.change-game');
+var humanChoiceEmoji = document.querySelector('.emoji');
 //Newly added:
 var resultsView = document.querySelector('.results-view');
 var humanChoiceImage = document.querySelector('.human-choice-image');
 var computerChoiceImage = document.querySelector('.computer-choice-image');
 var humanWinsDisplay = document.querySelector('.player-1-win-count');
 var computerWinsDisplay = document.querySelector('.player-2-win-count');
-// Do I need Weapon buttons? Emojis/pngs?
+//Emojis:
+// var classicRockEmoji = document.querySelector('#classicRockChoice');
+// var classicPaperEmoji = document.querySelector('#classicPaperChoice');
 
 // EVENT LISTENERS
 window.addEventListener('load', initiateGame);
@@ -111,6 +114,15 @@ hide(classicView)
 hide(hardView)
 }
 
+// function displayHumanChoiceEmoji() {
+//   if (currentGame.gameType === "classic" && humanChoice === "rock") {
+//     show(classicRockChoice)
+//   }
+//   else if (currentGame.gameType === "classic" && humanChoice === "paper") {
+//     show(classicPaperChoice)
+//   }
+// }
+
 // function resetGame() {
 //   if (currentGame.gameType === 'classic') {
 //     displayClassicView()
@@ -153,6 +165,7 @@ function playGame(event) {
    // displayResultsView()
    displayHumanChoice(humanChoice)
    displayComputerChoice(computerChoice)
+   //displayHumanChoiceEmoji()
    displayWinner()
    displayScore()
    setTimeout(nextRound, 1500)
@@ -160,6 +173,7 @@ function playGame(event) {
 
 // 4. Display human choice and computer choice side by side when image is clicked...
 function displayHumanChoice(humanChoice) {
+  //show(humanChoiceEmoji)
   humanChoiceImage.innerHTML = "";
   //playGame()
     displayResultsView();

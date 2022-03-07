@@ -21,6 +21,7 @@ html {
 body {
   background-color: #F0EDEE;
   font-family: 'Nunito', sans-serif;
+  /* cursor: pointer; */
   /* color: #2A2E45; */
   /* height: 100%; */
 }
@@ -60,6 +61,11 @@ h2, h3, h4 {
   border: 0;
   padding: 10px;
   margin-top: 250px;
+  cursor: pointer;
+}
+
+.change-game-button:hover {
+  opacity: 0.9;
 }
 
 .game-board-section {
@@ -92,7 +98,7 @@ h2, h3, h4 {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 100%
+  width: 100%;
 }
 
 .choose-game-buttons {
@@ -107,6 +113,11 @@ h2, h3, h4 {
   border: 0;
   margin-top: 50px;
   padding: 25px 25px 25px 25px;
+  cursor: pointer;
+}
+
+.classic-game:hover, .hard-game:hover {
+  opacity: 0.9;
 }
 
 .game-title {
@@ -122,6 +133,7 @@ h2, h3, h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .weapon-button {
@@ -130,6 +142,7 @@ h2, h3, h4 {
   border: 0;
   padding: 0;
   margin: 25px;
+  cursor: pointer;
 }
 
 .image {
@@ -141,11 +154,16 @@ h2, h3, h4 {
   display: flex;
   justify-content: center;
   height: 100px;
+  margin-top: 50px;
   margin-bottom: 200px;
 }
 
 .human-choice-image,
 .computer-choice-image {
+  height: 75px;
+  width: 75px;
+  border: 0;
+  padding: 0;
   margin: 25px;
 }
 

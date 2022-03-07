@@ -37,7 +37,6 @@ checkWinConditions(human, computer) {
   //   console.log('draw', this.draw)
   // }
 }
-};
 
 // winConditions(player1, player2)?
   // conditional?
@@ -77,8 +76,10 @@ checkWinConditions(human, computer) {
 // conditional? if p1 === p2 draw = true? .choice...
 // else draw = false?
 
-// resetGame()?
-// hmm...
+resetGame() {
+  this.winner = ""
+}
+};
 
 
 // A Game should include:

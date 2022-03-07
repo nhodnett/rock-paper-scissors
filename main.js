@@ -111,6 +111,20 @@ hide(classicView)
 hide(hardView)
 }
 
+// function resetGame() {
+//   if (currentGame.gameType === 'classic') {
+//     displayClassicView()
+//   }
+//   else if (currentGame.gameType === 'hard') {
+//     displayHardView()
+//   }
+//   hide(displayHumanChoice)
+//   hide(displayComputerChoice)
+//   hide(displayWinner)
+//   show(classicView)
+//   show(hardView)
+// };
+
 // 2. Random Choice generator for computer
 function chooseComputerWeapon() {
   console.log(currentGame.gameType)
@@ -141,6 +155,7 @@ function playGame(event) {
    displayComputerChoice(computerChoice)
    displayWinner()
    displayScore()
+   setTimeout(nextRound, 1500)
 };
 
 // 4. Display human choice and computer choice side by side when image is clicked...
@@ -214,6 +229,15 @@ computerWinsDisplay.innerText = `Wins: ${currentGame.player2.wins}`
 // }
 
 // 8. function for resetGame()?
-// function resetGame() {
-//
-// }
+function nextRound() {
+  currentGame.resetGame()
+  if (currentGame.winner === "" && currentGame.gameType === 'classic') {
+    displayClassicView()
+  }
+  else if (currentGame.winner === "" && currentGame.gameType === 'hard') {
+    displayHardView()
+  }
+  // hide(displayHumanChoice)
+  // hide(displayComputerChoice)
+   hide(resultsView)
+};

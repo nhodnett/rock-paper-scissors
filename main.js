@@ -9,7 +9,6 @@ var classicView = document.querySelector('.choose-weapon-classic-view');
 var hardView = document.querySelector('.choose-weapon-hard-view');
 var changeGameView = document.querySelector('.change-game');
 var humanChoiceEmoji = document.querySelector('.emoji');
-
 var resultsView = document.querySelector('.results-view');
 var humanChoiceImage = document.querySelector('.human-choice-image');
 var computerChoiceImage = document.querySelector('.computer-choice-image');
@@ -55,8 +54,7 @@ function newGame(event) {
     currentGame.gameType = 'hard'
     displayHardView()
   }
-  };
-
+};
 
 function displayClassicView() {
   show(classicView)
@@ -110,7 +108,6 @@ function displayStartPage(event) {
   changeText.innerText = "Choose your game!";
 };
 
-//
 function displayResultsView() {
   show(resultsView)
   hide(classicView)
@@ -192,7 +189,7 @@ function displayWinner() {
   }
   else {
     changeText.innerText = "It's a Draw!"
-}
+  }
 };
 
 function displayScore() {

@@ -19,7 +19,7 @@ The game can be accessed through the following steps:
 ### Start Page View
 Hovering over the Classic or Hard button areas in the center of the page changes the cursor and produces an opacity on those buttons to indicate that the user can select one of these options.
 
-![Start Page](https://media.giphy.com/media/az9KcB3wx619Tdq7aX/giphy.gif)
+![Start Page](https://media.giphy.com/media/2EgfhRk4LBKADiRT7C/giphy.gif)
 ### Classic Game Play
 When the Classic game option is clicked a traditional game opens with a choice of 3 weapons. The user selects their weapon by clicking on their choice. Confirmation is indicated by a small icon that shows underneath for a brief amount of time. The user and computer choice is shown side by side and the results pop up. The winner, (or a draw), is briefly displayed above the weapon icons before resetting to the 3 weapon choices again.
 
